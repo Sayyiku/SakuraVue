@@ -1,0 +1,211 @@
+.flexMain {
+  width: 37%;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  @media (max-width: 768px) {
+    margin-left: 17%;
+  }
+  .leftTime {
+    position: absolute;
+    left: -20%;
+    padding: 15px;
+    border-radius: 15px;
+    color: orange;
+    -webkit-transform: translateZ(0);
+    @media (max-width: 768px) {
+      left: 0%;
+    }
+    .BtnWra {
+      padding-bottom: 10%;
+      .yearBtn {
+        border-radius: 5px;
+        padding: 5px;
+        cursor: url('/@/assets/images/ayuda.cur'), auto;
+      }
+      .orange {
+        background: orange;
+        color: #ffffff;
+      }
+    }
+  }
+}
+.BlogList {
+  width: 100%;
+  @media (max-width: 768px) {
+    width: 205%;
+  }
+  .blog-item {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    margin: 30px 0;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 1px 20px -6px rgba(0, 0, 0, .5);
+    opacity: 0;
+    transition: box-shadow .3s ease;
+    @media (min-width: 768px) {
+      &:hover {
+        box-shadow: 0 5px 10px 5px rgba(110, 110, 110, .4);
+      }
+
+      &:hover img {
+        transform: scale(1.1);
+      }
+    }
+
+    .post-thumb {
+      float: right;
+      width: 55%;
+
+      a {
+        height: 200px;
+        position: relative;
+        display: block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        border-radius: 0 10px 10px 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          pointer-events: none;
+          transition: all .6s;
+          filter: blur(0px);
+        }
+      }
+    }
+  }
+
+  .post-content-wrap {
+    position: relative;
+    display: inline-block;
+    float: right;
+    padding-right: 30px;
+    padding-left: 0;
+    width: 40%;
+    margin: 10px 10px 0;
+
+    .float-content {
+      position: relative;
+      width: 100%;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      z-index: 50;
+      color: rgba(0, 0, 0, .66);
+
+      p {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        height: 64px;
+        overflow: hidden;
+        margin: 5px 0 5px 0;
+        color: rgba(0, 0, 0, .66);
+        line-height: 23px;
+      }
+
+      i {
+        font-size: 25px;
+        color: #666;
+
+        &:hover {
+          color: #FE9600;
+        }
+      }
+    }
+  }
+
+  .right {
+    .post-thumb {
+      float: left;
+
+      a {
+        border-radius: 10px 0 0 10px;
+      }
+    }
+
+    .post-content-wrap {
+      float: left;
+      padding-left: 30px;
+      padding-right: 0;
+      text-align: right;
+      margin: 10px 10px 10px 0;
+    }
+  }
+
+  .post-list-show {
+    animation: post-list-show .5s;
+    -webkit-animation: post-list-show .5s;
+    opacity: 1;
+  }
+
+  @keyframes post-list-show {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(80px);
+      transform: translateY(80px)
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0)
+    }
+  }
+  @media (max-width: 768px) {
+    .blog-item {
+      margin: 0;
+      height: auto;
+      padding: 0;
+      border: 0;
+      box-shadow: none;
+
+      .post-thumb {
+        width: 100%;
+        left: 0;
+        clear: initial;
+
+        a {
+          height: 210px;
+          border-radius: 10px;
+        }
+      }
+
+      .post-content-wrap {
+        clear: initial;
+        width: 100%;
+        left: 0;
+        text-align: left;
+        margin: 0;
+        padding: 20px;
+        float: none;
+        box-shadow: none;
+        border-top: 0;
+
+        .post-title {
+          margin: 10px 0;
+          font-size: 14px;
+        }
+
+        .float-content {
+          p {
+            margin: 10px 0;
+            //font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+.isShowArchive {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #989898;
+  margin-top: 10%;
+}
+

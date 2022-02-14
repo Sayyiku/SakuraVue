@@ -1,0 +1,78 @@
+#backTop {
+  position: fixed;
+  right: 40px;
+  top: -950px;
+  z-index: 20;
+  width: 70px;
+  height: 900px;
+  transition: all .5s 0.3s ease-in-out;
+  cursor: url('/@/assets/images/ayuda.cur'), auto;
+  -webkit-animation: float 2s linear infinite;
+  animation: float 2s linear infinite;
+
+  ::v-deep(.el-backtop) {
+    display: none;
+  }
+
+  .clickBtn {
+    position: absolute;
+    display: inline-block;
+    width: 69px;
+    height: 91px;
+    background: transparent;
+    top: 89%;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .phone-backtop {
+      display: none;
+    }
+  }
+
+  .toTop img, .toTophui img {
+    width: 100%;
+    height: auto;
+  }
+
+  @-webkit-keyframes float {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0)
+    }
+
+    50% {
+      -webkit-transform: translateY(-6px);
+      transform: translateY(-6px)
+    }
+
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0)
+    }
+  }
+  @keyframes float {
+    0% {
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0)
+    }
+
+    50% {
+      -webkit-transform: translateY(-6px);
+      -ms-transform: translateY(-6px);
+      transform: translateY(-6px)
+    }
+
+    100% {
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0)
+    }
+  }
+}
+
+
+

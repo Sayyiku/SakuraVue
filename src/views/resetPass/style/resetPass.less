@@ -1,0 +1,43 @@
+.MainWrapper {
+  min-height: 600px;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 7% 10px 0;
+  background-color: rgba(255, 255, 255, .8);
+  animation: main 1s;
+  @keyframes main {
+    0% {
+      opacity: 0;
+      transform: translateY(50px)
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0)
+    }
+  }
+  .codeRight {
+    padding-right: 10px;
+    color: #e6a23c;
+    cursor: url('/@/assets/images/ayuda.cur'), auto;
+  }
+}
+
+.changePass ::v-deep(.el-input__inner) {
+
+  &:focus {
+    border: 1px solid #fe9600;
+  }
+}
+
+::v-deep(.onRestPass) {
+  width: 100%;
+  &:hover {
+    color: #fe9600;
+    border-color: #fe9600;
+  }
+  &:focus {
+    color: #fe9600;
+    border-color: #fe9600;
+  }
+}

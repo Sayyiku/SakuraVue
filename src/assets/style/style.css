@@ -1,0 +1,398 @@
+::selection {
+    /*background: #A0DAD0;*/
+    background: #feeacd;
+    color: #3d9e8d;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    display: none;
+    border-radius: 10px;
+    background-color: #FE9600;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 5px;
+    height: 8px;
+    background-color: #B9B9B9;
+}
+
+@media (max-width: 768px) {
+     ::-webkit-scrollbar-track,
+     ::-webkit-scrollbar-thumb,
+     ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc', 'PT Serif', 'SongTi SC', 'MicroSoft Yahei', Georgia, serif;
+    cursor: url('/@/assets/images/normal.cur'), auto
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+.transition-color {
+    transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+}
+
+a {
+    transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+    cursor: url('/@/assets/images/ayuda.cur'), auto;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+ul,
+li {
+    margin: 0;
+}
+
+.lazyload {
+    filter: blur(0px);
+    transition: .3s filter linear, .3s -webkit-filter linear;
+}
+
+p {
+    /* cursor: url('/@/assets/images/texto.cur'), auto; */
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.flex-items {
+    display: -webkit-flex;
+    /* Safari */
+    -webkit-align-items: center;
+    /* Safari 7.0+ */
+    display: flex;
+    align-items: center;
+}
+
+.flex-start {
+    display: -webkit-flex;
+    /* Safari */
+    -webkit-align-items: center;
+    /* Safari 7.0+ */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cell {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 0;
+}
+
+.align-center {
+    -webkit-align-self: center;
+    align-self: center;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ellipsis-two {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+#player .aplayer-lrc-current {
+    color: #fe9600;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#fireworks {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.page-header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #9C9C9C;
+}
+
+.page-header h1 {
+    font-size: 20px;
+    font-weight: 400;
+    border: 1px dashed #ddd;
+    padding: 15px;
+    color: #828282;
+}
+
+.pattern-header {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+}
+
+.pattern-header h1 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 500;
+    width: 80%;
+    margin: auto;
+    padding: 0;
+    border: 0;
+}
+
+.comment-reply-link,
+.comment-reply-link-re,
+.showEditor {
+    font-size: 12px;
+    display: block;
+    margin-left: 10px;
+    float: right;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    height: 20px;
+    background-color: rgb(254, 150, 0);
+    line-height: 20px;
+    padding: 0 6px;
+    border-radius: 3px;
+    cursor: url('/@/assets/images/ayuda.cur'), auto;
+    opacity: 0;
+    transition: color 0.2s ease-out 0s, border 0.2s ease-out 0s, opacity 0.2s ease-out 0s;
+}
+
+@media (max-width: 768px) {
+    .showEditor {
+        background-color: #ffe8c7;
+        color: #ffbc5c;
+    }
+}
+
+.post-content-wrap .post-date,
+.post-content-wrap .post-meta,
+.post-content-wrap .post-meta a {
+    color: #888;
+    font-size: 14px;
+}
+
+.post-content-wrap .post-meta-category {
+    margin-top: 10px;
+}
+
+.post-content-wrap i {
+    color: #989898;
+    font-size: 14px;
+}
+
+.post-content-wrap .post-title {
+    display: block;
+    margin: 18px 0;
+}
+
+.post-content-wrap .post-title h3 {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-wrap: break-word;
+    font-size: 16px;
+    font-weight: bold;
+    color: #504e4e;
+    transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+}
+
+.post-content-wrap .post-title:hover h3 {
+    color: #FE9600;
+}
+
+.post-content-wrap .comments-number {
+    margin-right: 10px;
+}
+
+.post-content-wrap .comments-number:last-child {
+    margin-right: 0;
+}
+
+::v-deep(.nav-item) {
+    padding: 10px
+}
+
+::v-deep(.nav-item,
+.el-dropdown,
+.nav,
+.el-dropdown--medium) {
+    outline: none;
+}
+
+::v-deep(.nav-item,
+.el-dropdown,
+.nav,
+.el-dropdown--medium):hover {
+    outline: none;
+}
+
+::v-deep(.el-button--warning) {
+    margin-top: -16px;
+}
+
+::v-deep(.el-form-item) {
+    margin-bottom: 15px;
+}
+
+::v-deep(.onLogin) {
+    margin-bottom: 0;
+}
+
+::v-deep(.onLoginFlex) {
+    margin-bottom: -10px;
+}
+#nprogress .bar {
+    background: #FE9600 !important;
+}
