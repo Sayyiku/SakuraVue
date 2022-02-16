@@ -90,7 +90,7 @@ const agreementDia = ref(false)
 const checkedRemember = ref(false)
 
 const usernameReg = /^[a-zA-Z]/
-const mobileReg = /^1[3|4|5|7|8][0-9]\d{8}$/
+const mobileReg = /^1[3|4|5|6|7|8|9]\d{9}$/
 watch(() => store.state.login.logonShow, (val, old) => logonShow.value = val)
 
 //账号登陆表单

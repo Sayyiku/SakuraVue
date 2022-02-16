@@ -7,7 +7,7 @@ export function accountLogin(params) {
   return request({
     url: '/account/login',
     headers: {
-      'Authorization': 'Basic UEM6ODkzMTQ2'  //正式
+      'Authorization': 'Basic UEM6MTIzNA=='  //正式
       // 'Authorization': 'Basic bmFubmFuOjEyMzQ1Njc4OQ==' //本地
     },
     method: 'post',
@@ -23,7 +23,7 @@ export function thirdLogin(params) {
   return request({
     url: '/oauth',
     headers: {
-      'Authorization': 'Basic UEM6ODkzMTQ2'  //正式
+      'Authorization': 'Basic UEM6MTIzNA== '  //正式
       // 'Authorization': 'Basic bmFubmFuOjEyMzQ1Njc4OQ==' //本地
     },
     method: 'post',
@@ -39,7 +39,7 @@ export function codeLogin(params) {
   return request({
     url: '/mobile/login',
     headers: {
-      'Authorization': 'Basic UEM6ODkzMTQ2'  //正式
+      'Authorization': 'Basic UEM6MTIzNA=='  //正式
       // 'Authorization': 'Basic bmFubmFuOjEyMzQ1Njc4OQ==' //本地
     },
     method: 'post',
@@ -57,6 +57,8 @@ export function getUserInfo(token) {
     method: 'get'
   })
 }
+13123456789
+16651455760
 
 /**
  * @description 退出
@@ -66,7 +68,7 @@ export function logout(params) {
   return request({
     url: '/logout',
     headers: {
-      'Authorization': 'Basic UEM6ODkzMTQ2'  //正式
+      'Authorization': 'Basic UEM6MTIzNA=='  //正式
       // 'Basic cGM6MTIzNDU2' //本地
       // 'Authorization': 'Basic bmFubmFuOjEyMzQ1Njc4OQ==' //本地
     },

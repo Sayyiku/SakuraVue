@@ -62,7 +62,7 @@ const codeCount = ref(0)
 const usernameReg = /^[a-zA-Z]/
 const logonShow = ref(false)
 const loginLoading = ref(false)
-const mobileReg = /^1[3|4|5|7|8][0-9]\d{8}$/
+const mobileReg = /^1[3|4|5|6|7|8|9]\d{9}$/
 watch(() => store.state.login.logonShow, (val, old) => logonShow.value = val)
 
 //注册表单
