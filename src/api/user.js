@@ -57,8 +57,6 @@ export function getUserInfo(token) {
     method: 'get'
   })
 }
-13123456789
-16651455760
 
 /**
  * @description 退出
