@@ -63,11 +63,11 @@
 <style lang="less" scoped src="./style/archive.less"></style>
 
 <script setup>
-import {pageArchives} from '/@/api/archives'
-import {nextTick, onBeforeMount, reactive, ref} from "vue";
-import {pagePublishedArticle} from '/@/api/article'
-import ListTitle from '/@/components/listTitle/ListTitle.vue'
 import {ElMessage} from "element-plus";
+import {pageArchives} from '/@/api/archives'
+import {pagePublishedArticle} from '/@/api/article'
+import {nextTick, onBeforeMount, reactive, ref} from "vue";
+import ListTitle from '/@/components/listTitle/ListTitle.vue'
 import ScrollBar from "/@/components/scrollBar/ScrollBar.vue";
 
 const isShow = ref(true)

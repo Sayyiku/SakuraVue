@@ -16,7 +16,6 @@
 import {onMounted, ref, watch} from "vue";
 import {useStore} from "vuex";
 import {useRouter} from "vue-router";
-import { ElConfigProvider } from "element-plus"
 import {pullWeather} from "/@/assets/js/weather"
 import zhCn from "element-plus/lib/locale/lang/zh-cn"
 import './assets/js/click.js'
