@@ -58,7 +58,7 @@ const router = createRouter({
     {
       path: '/message',
       name: "Message",
-      component: () => import('/@/views/message/message.vue')
+      component: () => import('/@/views/message/Message.vue')
     },
   ],
   scrollBehavior(to, from, savedPosition) {
