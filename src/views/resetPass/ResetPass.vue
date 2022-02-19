@@ -47,6 +47,8 @@ import {sendCode} from "/@/api/code";
 import {ElMessage} from "element-plus";
 import {resetPassword} from "/@/api/user";
 import {useRouter} from "vue-router";
+import mobileReg from '/@/utils/validate'
+import {validMobile} from '/@/utils/validate'
 
 const formPass = reactive({
   mobile: '',
@@ -57,7 +59,7 @@ const formRef = ref()
 const router = useRouter()
 const timer = ref(null)
 const codeCount = ref(0)
-const mobileReg = /^1[3|4|5|7|8][0-9]\d{8}$/
+
 
 const rulesPass = reactive({
   mobile: [
@@ -92,7 +94,7 @@ const resetPassClick = () => {
 //发送验证码
 let sendCodeRule = () => {
   if (formPass.mobile === '') return
-  if (!mobileReg.test(formPass.mobile)) return
+  if (!validMobile(formPass.mobile)) return
   //倒计时
   const TIME_COUNT = 90
   if (!timer.value) {

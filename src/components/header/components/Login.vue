@@ -73,6 +73,8 @@ import {useStore} from "vuex";
 import {sendCode} from "/@/api/code";
 import {useRouter} from "vue-router";
 import {ElMessage} from "element-plus";
+import mobileReg from '/@/utils/validate'
+import {validMobile} from '/@/utils/validate'
 import {onMounted, reactive, ref, watch} from "vue";
 import Agreement from '/@/views/agreement/Agreement.vue'
 import {getPassword, getRemember, setRemember} from "/@/utils/auth";
@@ -90,7 +92,6 @@ const agreementDia = ref(false)
 const checkedRemember = ref(false)
 
 const usernameReg = /^[a-zA-Z]/
-const mobileReg = /^1[3|4|5|6|7|8|9]\d{9}$/
 watch(() => store.state.login.logonShow, (val, old) => logonShow.value = val)
 
 //账号登陆表单
@@ -184,7 +185,7 @@ const onLogin = () => {
 //发送验证码
 let sendCodeRule = () => {
   if (formMobile.mobile === '') return
-  if (!mobileReg.test(formMobile.mobile)) return
+  if (!validMobile(formMobile.mobile)) return
   //倒计时
   const TIME_COUNT = 90
   if (!timer.value) {
@@ -198,7 +199,7 @@ let sendCodeRule = () => {
       }
     }, 1000)
   }
-  sendCode({mobile: formMobile.mobile}).then(() => ElMessage.success("发送成功"))
+  sendCode({mobile: formMobile.mobile}).then(() => ElMessage.success("发送成功,请检查！"))
 }
 
 const forgottenPassword = () => {

@@ -9,6 +9,9 @@ const defaultSettings = {
    * @description 首页背景图
    * @type {String}
    * @description 首页背景图, 一张图片为一个键值对，数量不限制，建议不要太多，会拖慢加载速度
+   * 项目图片为了加快加载速度，均使用云存储
+   * 也可将图片放入src/assets/images，然后用相对路径本地引用
+   * 注意相对路径，是 src/home/components/Banner.vue 相对于 src/assets/images，不是本页面相对
    */
   BannerImg: [
     {url: 'https://i.w3tt.com/2022/02/12/Tl8dL.jpg'},

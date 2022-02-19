@@ -75,6 +75,8 @@ import {useRouter} from "vue-router";
 import {sendCode} from "/@/api/code";
 import {ElMessage} from "element-plus";
 import {reactive, ref, watch} from "vue";
+import mobileReg from '/@/utils/validate'
+import {validMobile} from '/@/utils/validate'
 import {getUserInfo, getAccessToken} from "/@/utils/auth";
 import {validateMobile, rebindMobile, bindMobile} from '/@/api/user'
 
@@ -88,7 +90,7 @@ const isMobile = ref(false)
 const replacement = ref(false)
 let userInfo = reactive(getUserInfo())
 const isChangeMobile = ref(true)
-const mobileReg = /^1[3|4|5|7|8][0-9]\d{8}$/
+
 const formMobileChange = reactive({code: ''})
 const formMobileBind = reactive({mobile: '', code: ''})
 watch(() => store.state.user.userInfo, (val, old) => {
@@ -179,7 +181,7 @@ const rebind = () => {
 //发送验证码
 let sendCodeRule = (type) => {
   if (type === 1 && formMobileBind.mobile === '') return
-  if (!mobileReg.test(formMobileBind.mobile)) return
+  if (!validMobile(formMobileBind.mobile)) return
   //倒计时
   const TIME_COUNT = 90
   if (!timer.value) {

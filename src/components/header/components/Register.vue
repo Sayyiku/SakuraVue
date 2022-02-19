@@ -52,6 +52,8 @@ import {register} from "/@/api/user";
 import {sendCode} from "/@/api/code";
 import {useRouter} from "vue-router";
 import {ElMessage} from "element-plus";
+import mobileReg from '/@/utils/validate'
+import {validMobile} from '/@/utils/validate'
 import { reactive, ref, watch} from "vue";
 
 const Register = ref()
@@ -62,7 +64,6 @@ const codeCount = ref(0)
 const usernameReg = /^[a-zA-Z]/
 const logonShow = ref(false)
 const loginLoading = ref(false)
-const mobileReg = /^1[3|4|5|6|7|8|9]\d{9}$/
 watch(() => store.state.login.logonShow, (val, old) => logonShow.value = val)
 
 //注册表单
@@ -116,7 +117,7 @@ const onRegister = () => {
 
 //发送验证码
 let sendCodeRule = () => {
-  if (formRegister.mobile === '' || !mobileReg.test(formRegister.mobile)) return
+  if (formRegister.mobile === '' || !validMobile(formRegister.mobile)) return
   //倒计时
   const TIME_COUNT = 90
   if (!timer.value) {

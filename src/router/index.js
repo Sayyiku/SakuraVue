@@ -60,6 +60,11 @@ const router = createRouter({
       name: "Message",
       component: () => import('/@/views/message/Message.vue')
     },
+    {
+      path: '/email',
+      name: "Email",
+      component: () => import('/@/views/email/Email.vue')
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
