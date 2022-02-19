@@ -405,3 +405,10 @@ table {
     display: inline;
     width: 8%;
 }
+
+@media (max-width: 768px) {
+    .weather {
+        left: 10%;
+        top: 0.7%;
+    }
+}

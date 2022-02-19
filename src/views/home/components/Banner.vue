@@ -57,7 +57,9 @@ const scrollArrClick = () => emit('scrollOffset')
 }
 
 .carouselImgWrapper {
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
+  max-height: 100%
 }
 </style>
