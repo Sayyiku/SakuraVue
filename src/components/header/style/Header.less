@@ -77,6 +77,10 @@
 
 ::v-deep(.onLoginRegisterBtn) {
   width: 180px;
+  &:hover {
+    color: #fe9600;
+    border-color: #fe9600;
+  }
   @media screen and (max-width: 768px) {
     width: 8rem;
   }
@@ -605,6 +609,7 @@
   border-color: #fe9600 !important;
 }
 
+::v-deep(.el-input .el-input__inner):focus{border-color:#FE9600}
 .nav-wrapper:hover ::v-deep(.s-sticker-tmp) {
   color: #000000 !important;
 }
