@@ -12,7 +12,8 @@
             <div class='top-feature-item'>
               <router-link :to="{path:'/article/' + l.id}">
                 <div class='img-box'>
-                  <img :src="l.cover" alt="">
+                  <img v-if="isFeatureCover" :src="l.cover" alt="">
+                  <img v-else :src="filetUrl()[Random(0, ListImg.length - 1)]" alt="">
                 </div>
                 <div class='info'>
                   <h3 class='ellipsis'>{{ l.title }}</h3>
@@ -29,7 +30,7 @@
 <style lang="less" scoped src="../style/home.less"/>
 
 <script setup>
-import {onBeforeMount, onMounted, ref, defineExpose} from "vue";
+import {onBeforeMount, ref} from "vue";
 import {useRouter} from "vue-router";
 import {recommendList} from "/@/api/article";
 import defaultSettings from "/@/settings";
@@ -39,6 +40,7 @@ const loading = ref(true)
 const isFeature = ref(true)
 const featureList = ref([])
 const ListImg = defaultSettings.Feature
+const isFeatureCover = defaultSettings.isShowCover
 onBeforeMount(() => getArticle())
 const getArticle = async () => await recommendList().then(res => {
   loading.value = false
@@ -47,6 +49,17 @@ const getArticle = async () => await recommendList().then(res => {
     featureList.value.length > 0 ? isFeature.value = false : isFeature.value = true
   })
 })
+const getImageUrl = (url) => {
+  return new URL(url, import.meta.url).href
+}
+//获取图片数组
+const filetUrl = () => {
+  return ListImg.map(u => getImageUrl(u.url))
+}
+//随机数
+const Random = (m, n) => {
+  return Math.floor(Math.random() * (n - m + 1)) + m
+}
 
 </script>
 
