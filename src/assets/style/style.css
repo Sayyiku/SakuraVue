@@ -396,3 +396,12 @@ table {
 #nprogress .bar {
     background: #FE9600 !important;
 }
+
+.weather {
+    position: fixed;
+    left: 7%;
+    z-index: 9999;
+    top: 1.8%;
+    display: inline;
+    width: 8%;
+}

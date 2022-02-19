@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <!-- 天气 -->
+    <div class="weather">
+      <div id="he-plugin-simple"></div>
+    </div>
     <!-- elementPlus切换中文组件 -->
     <el-config-provider :locale="zhCn">
       <router-view v-if="reRouter"></router-view>
@@ -13,6 +17,7 @@ import {onMounted, ref, watch} from "vue";
 import {useStore} from "vuex";
 import {useRouter} from "vue-router";
 import { ElConfigProvider } from "element-plus"
+import {pullWeather} from "/@/assets/js/weather"
 import zhCn from "element-plus/lib/locale/lang/zh-cn"
 import './assets/js/click.js'
 
@@ -21,6 +26,7 @@ const router = useRouter()
 const reRouter = ref(true)
 //监听状态改变，刷新路由
 watch(() => store.state.user.reRouter, (val, old) => reRouter.value = val)
+onMounted(() => pullWeather())
 </script>
 <style>
  @import "assets/style/style.css";
