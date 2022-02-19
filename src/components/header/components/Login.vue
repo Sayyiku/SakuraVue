@@ -105,9 +105,23 @@ const formMobile = reactive({
   code: ''
 })
 
+//自定义验证规则
+const valid = (rule, value, callback) => {
+  const isNumReg = /^\d+$/
+  const isMobile = validMobile(value) || isNumReg.test(value)
+  if (isMobile) {
+    if (!validMobile(value)) callback(new Error("手机号格式不正确"))
+    else callback()
+  }
+  else {
+    if (!usernameReg.test(value)) callback(new Error("用户名只能字母开头，允许2-16字节"))
+    else callback()
+  }
+}
+
 //账号登录验证规则
 const rulesAccount = reactive({
-  username: [{min: 2, max: 16, pattern: usernameReg, required: true, message: '用户名只能字母开头，允许2-16字节', trigger: 'blur'}],
+  username: [{required: true, trigger: 'blur', validator: valid}],
   passWord: [
     {required: true, message: '密码不能为空', trigger: 'blur'},
     {min: 6, max: 15, message: '密码最短六位', trigger: 'blur'},

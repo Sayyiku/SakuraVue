@@ -303,7 +303,10 @@ const userClick = (command) => {
 const categoryClick = (command) => {
   router.push({
     path: '/category/' + command.id,
-    query: {category: command.name}
+    query: {
+      id: command.id,
+      category: command.name
+    }
   })
 }
 //搜索

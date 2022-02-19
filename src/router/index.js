@@ -65,6 +65,11 @@ const router = createRouter({
       name: "Email",
       component: () => import('/@/views/email/Email.vue')
     },
+    {
+      path: '/emailbind',
+      name: "EmailBind",
+      component: () => import('/@/views/email/EmailBind.vue')
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

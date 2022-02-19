@@ -35,6 +35,9 @@ const name = ref(router.currentRoute.value.query.category)
 // const scrollBarServer = () => ScrollBarRef.value.scrollBar()
 
 // watch(() => route.path, () => )
+watch(() => route.path, () => {
+  id.value = router.currentRoute.value.query.id
+})
 </script>
 <script>
 export default {

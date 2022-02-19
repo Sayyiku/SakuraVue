@@ -1,0 +1,61 @@
+.MainWrapper {
+  min-height: 600px;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 10px 0;
+  background-color: rgba(255, 255, 255, .8);
+  animation: main 1s;
+  @keyframes main {
+    0% {
+      opacity: 0;
+      transform: translateY(50px)
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0)
+    }
+  }
+  .waitLoading {
+    text-align: center;
+    color: #989898;
+  }
+}
+
+.success-content {
+  text-align: center;
+  margin-top: 7%;
+  transform: translateY(-7%);
+  color: #fe9600;
+  padding-bottom: 30px;
+  font-size: 14px;
+
+  p {
+    padding: 0;
+    margin: 0;
+    line-height: 24px;
+  }
+}
+
+.tip-content {
+  font-size: 13px;
+  color: #999;
+  text-align: center;
+  margin: 30px auto 0;
+}
+
+::v-deep(.el-input .el-input__inner){
+  &:focus{border-color:#FE9600}
+}
+
+::v-deep(.onRestPass) {
+  width: 100%;
+  &:hover {
+    color: #fe9600;
+    border-color: #fe9600;
+  }
+  &:focus {
+    color: #fe9600;
+    border-color: #fe9600;
+  }
+}

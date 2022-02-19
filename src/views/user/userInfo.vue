@@ -35,16 +35,7 @@
       <UserName></UserName>
       <Nickname></Nickname>
       <Mobile></Mobile>
-      <div class="userInfoForm formOffset">
-        <div class="tipText">
-          <div class="labelInfo labelInfoTitle">邮&nbsp;&nbsp;&nbsp;箱</div>
-          <div class="labelInfoTitle" v-if="emailShow && userInfo.email">{{ sensitiveEmail(userInfo.email) }}</div>
-          <div class="labelInfoTitle" v-else>未绑定</div>
-        </div>
-        <div v-show="emailShow" class="Editor showEditor">暂未上线</div>
-        <div v-show="!emailShow" class="Editor showEditor offsetClose" @click="emailShow = !emailShow">取消</div>
-        <div v-show="!emailShow" class="Editor showEditor offsetSave">保存</div>
-      </div>
+      <Email></Email>
       <Birthday></Birthday>
       <Gender></Gender>
     </div>
@@ -71,6 +62,7 @@ import {reactive, ref, watch} from 'vue'
 import {getUserInfo} from "/@/utils/auth";
 import defaultSettings from "/@/settings";
 import {getAccessToken} from "/@/utils/auth";
+import Email from "./components/UserEmail.vue";
 
 const store = useStore()
 const router = useRouter()
@@ -80,13 +72,10 @@ const files = reactive([])
 const userInfo = reactive(getUserInfo())
 const headers = {Authorization: 'Bearer ' + getAccessToken()}
 const path = import.meta.env.VITE_APP_URL + '/user/avatar/update'
+
 watch(() => store.state.user.userInfo, (val, old) => {
   if (val === '') router.push('/')
 })
-// 邮箱脱敏
-const sensitiveEmail = (email) => {
-  return email ? email.substr(0, 2) + '****' + email.substr(email.indexOf('@')) : ''
-}
 
  // 上传前，对文件校验
 const beforeUpload = (file) => {
