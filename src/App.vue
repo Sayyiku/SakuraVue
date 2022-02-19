@@ -21,7 +21,6 @@ const router = useRouter()
 const reRouter = ref(true)
 //监听状态改变，刷新路由
 watch(() => store.state.user.reRouter, (val, old) => reRouter.value = val)
-window.onresize = () => scrollBar();
 </script>
 <style>
  @import "assets/style/style.css";

@@ -55,6 +55,11 @@ const router = createRouter({
       name: "RestPass",
       component: () => import('/@/views/resetPass/ResetPass.vue')
     },
+    {
+      path: '/message',
+      name: "Message",
+      component: () => import('/@/views/message/message.vue')
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

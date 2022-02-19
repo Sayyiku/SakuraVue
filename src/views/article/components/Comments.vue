@@ -231,7 +231,7 @@ const reSubmit = () => {
 
 const deleteMessage = (del, type) => {
   const message = type === 1 ? "确定删除这条留言吗?" : "确定删除这条评论吗?"
-  ElMessageBox.confirm(message, 'Warning', {
+  ElMessageBox.confirm(message, '提醒', {
     confirmButtonText: '确定',
     cancelButtonText: '取消',
     type: 'warning',

@@ -57,6 +57,15 @@
               </div>
             </router-link>
 
+            <router-link to="/message">
+              <div class="nav-item">
+                <div class="nav-item">
+                  <i class="iconfont icon-xingzhuang9"></i>
+                  <span>留言板</span>
+                </div>
+              </div>
+            </router-link>
+
             <div class="icon-box">
               <i class="iconfont icon-sousuo1" @click="searchClick"></i>
               <i v-if="isToken" class="iconfont icon-yonghu" @click="loginClick"></i>
@@ -159,6 +168,15 @@
               <div class='item flex-items'>
                 <i class='iconfont icon-xingzhuang2'/>
                 <span>标签墙</span>
+              </div>
+            </router-link>
+          </li>
+
+          <li>
+            <router-link to="/message">
+              <div class='item flex-items'>
+                <i class='iconfont icon-xingzhuang9'/>
+                <span>留言板</span>
               </div>
             </router-link>
           </li>

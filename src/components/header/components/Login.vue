@@ -143,6 +143,7 @@ const onLogin = () => {
         try {
           await store.dispatch('user/accountLogin', params)
           await store.dispatch('user/getUserInfo')
+          await store.dispatch("user/changeReRouter")
           setRemember(checkedRemember.value ? '1' : '0')
           if (checkedRemember.value) await store.dispatch('login/setUsernameAndPassword', params)
           else await store.dispatch('login/clearUsernameAndPassword')
