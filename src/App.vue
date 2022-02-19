@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- 天气 -->
-    <div class="weather">
+    <div class="weather" id="weather">
       <div id="he-plugin-simple"></div>
     </div>
     <!-- elementPlus切换中文组件 -->
@@ -15,16 +15,18 @@
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import {onMounted, ref, watch} from "vue";
 import {useStore} from "vuex";
-import {useRouter} from "vue-router";
+import {useRoute} from "vue-router";
 import {pullWeather} from "/@/assets/js/weather"
 import zhCn from "element-plus/lib/locale/lang/zh-cn"
 import './assets/js/click.js'
 
 const store = useStore()
-const router = useRouter()
+const route = useRoute()
 const reRouter = ref(true)
 //监听状态改变，刷新路由
 watch(() => store.state.user.reRouter, (val, old) => reRouter.value = val)
+//监听路由切换，改变天气层级，始终显示在头部
+watch(() => route.path, () => document.getElementById("weather").style = 999)
 onMounted(() => pullWeather())
 </script>
 <style>

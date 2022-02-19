@@ -54,10 +54,12 @@
 <style lang="less" scoped src="./style/catList.less"/>
 
 <script setup>
-import {nextTick, onMounted, reactive, ref} from "vue";
+import {nextTick, onMounted, reactive, ref, watch} from "vue";
 import {pagePublishedArticle} from "/@/api/article";
 import Footer from '/@/components/footer/Footer.vue'
 import PagInaction from '/@/components/pagInation/PagInaction.vue'
+import {useRoute} from "vue-router";
+import {useStore} from "vuex";
 
 const sizes = ref(6) //默认请求每页条数
 const currentPage = ref(1) //默认请求页数
@@ -65,6 +67,8 @@ const loading = ref(true)
 const List = reactive([])
 const isFinish = ref(false)
 const emit = defineEmits(["scrollBarServer"])
+const route = useRoute()
+const store = useStore()
 
 const props = defineProps({
   id: {
@@ -76,6 +80,10 @@ const props = defineProps({
     default: ''
   },
   type: String
+})
+watch(() => route.path, () => {
+  getCorrespondingArticle()
+  store.dispatch('user/changeReRouter')
 })
 onMounted(() => getCorrespondingArticle())
 //获取对应文章
@@ -104,6 +112,7 @@ const getCorrespondingArticle = async () => {
       }
       break;
   }
+  List.value = []
   await pagePublishedArticle(params).then(res => {
     loading.value = false
     res.data.records.forEach(j => List.push(j))

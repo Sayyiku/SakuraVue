@@ -1,5 +1,5 @@
 <template>
-  <el-affix @change="affixChange">
+  <el-affix @change="affixChange" :z-index="17">
     <div class="nav-wrapper" :class="{'nav-wrapper-hover' : isFiex}">
       <div class='ellipsis'>
         <a href="#">{{ defaultSettings.titleLeft }}</a>
@@ -320,12 +320,11 @@ const searchPages = () => {
 //移动端侧边栏打开事件
 const openMonav = () => {
   isMoNav.value = !isMoNav.value
-  if (!isMoNav) {
-    document.body.style.height = '100%';
-    document.body.style.overflow = 'hidden';
+  const weatherEle = document.getElementById("weather")
+  if (!isMoNav.value) {
+    weatherEle.style.zIndex = 999
   } else {
-    document.body.style.height = '';
-    document.body.style.overflow = '';
+    weatherEle.style.zIndex = 0
   }
 }
 </script>

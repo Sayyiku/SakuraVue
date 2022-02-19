@@ -21,19 +21,20 @@
 <style lang="less" scoped src="./style/category.less"/>
 
 <script setup>
-import {ref} from "vue";
-import {useRouter} from "vue-router";
+import {ref,watch} from "vue";
+import {useRouter,useRoute} from "vue-router";
 import CatList from "/@/components/catList/CatList.vue";
 import ListTitle from '/@/components/listTitle/ListTitle.vue'
 import ScrollBar from '/@/components/scrollBar/ScrollBar.vue'
 
 const router = useRouter()
+const route  = useRoute()
 const ScrollBarRef = ref(null)
-const id = router.currentRoute.value.query.id
-const name = router.currentRoute.value.query.category
-const scrollBarServer = () => {
-  ScrollBarRef.value.scrollBar()
-}
+const id = ref(router.currentRoute.value.query.id)
+const name = ref(router.currentRoute.value.query.category)
+// const scrollBarServer = () => ScrollBarRef.value.scrollBar()
+
+// watch(() => route.path, () => )
 </script>
 <script>
 export default {

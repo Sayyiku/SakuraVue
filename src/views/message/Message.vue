@@ -34,7 +34,6 @@
                 </div>
                 <span v-if="userInfo &&
                     (userInfo.id === comment.fromUser.id
-                    || userInfo.id === props.id
                     || userInfo.roles.includes('admin'))"
                       class='comment-reply-link' @click="deleteMessage(comment)">删除</span>
                 <span class='comment-reply-link'
@@ -52,13 +51,12 @@
                   <img :src='reply.fromUser.avatar || defaultSettings.defaultAvatar' alt="" class="avatarImg"/>
                   <div class='commeta cell reCommeta'>
                     <h2>{{ reply.fromUser.nickname }}
-                      <el-tag v-if="reply.fromUser.id === props.userId" color="black" size="small">作者</el-tag>
+                      <el-tag v-show="reply.fromUser.admin === 1" color="black" size="small">管理</el-tag>
                     </h2>
                     <h3>{{ reply.createTime }} | {{ parseDates(reply.createTime) }}</h3>
                   </div>
                   <span v-if="userInfo &&
                             (userInfo.id === reply.fromUser.id
-                            || userInfo.id === props.id
                             || userInfo.roles.includes('admin'))"
                         class='comment-reply-link-re' @click="deleteMessage(reply)">删除</span>
                   <span class='comment-reply-link-re'
