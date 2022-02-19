@@ -27,7 +27,7 @@
                 <img :src='comment.fromUser.avatar || defaultSettings.defaultAvatar' alt="" class="avatarImg"/>
                 <div class='commeta cell'>
                   <h2>{{ comment.fromUser.nickname }}
-                    <el-tag v-if="comment.fromUser.id === props.userId" color="black" size="small">作者</el-tag>
+                    <el-tag v-show="comment.fromUser.admin === 1" color="black" size="small">管理</el-tag>
                   </h2>
 
                   <h3>{{ comment.createTime }} | {{ parseDates(comment.createTime) }}</h3>
@@ -123,10 +123,7 @@ import {defineProps, nextTick, onMounted, reactive, ref} from "vue";
 import {getAccessToken, getUserInfo} from "/@/utils/auth";
 import {pageMessage, addMessage, addReply, deleteO} from '/@/api/message'
 
-const props = defineProps({
-  id: String,
-  userId: Number
-})
+
 const store = useStore()
 const router = useRouter()
 const total = ref(0)
