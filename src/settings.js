@@ -54,6 +54,26 @@ const defaultSettings = {
    */
   titleLeft: 'Sayyiku',
 
+  /**
+   * @type {Number}
+   * @description 首页樱花的数量
+   */
+  petalsNum: 30,
+
+
+  /**
+   * @type {Number}
+   * @description 首页樱花飘落的速度
+   */
+  petalsSpeed: 23,
+
+  /**
+   * @type {Number}
+   * @description 首页单个樱花的大小，建议默认
+   */
+  petalsWidth: 16,
+  petalsHeight: 16,
+
 
   /**
    * @type {String}

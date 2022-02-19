@@ -1,5 +1,5 @@
 <template>
-  <el-affix @change="affixChange" :z-index="17">
+  <el-affix @change="affixChange" :z-index="99">
     <div class="nav-wrapper" :class="{'nav-wrapper-hover' : isFiex}">
       <div class='ellipsis'>
         <a href="#">{{ defaultSettings.titleLeft }}</a>

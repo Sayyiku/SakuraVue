@@ -32,7 +32,7 @@
                   </div>
                   <div class='post-content-wrap'>
                     <div class='post-content'>
-                      <router-link :to="{path:'/article/' + article.id}" class="post-title">
+                      <router-link :to="{path:'/article/' + article.id}" class="post-title" :title="article.title">
                         <h3>{{ article.title }}</h3>
                       </router-link>
                       <div class='post-meta post-meta-category'>

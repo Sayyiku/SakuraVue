@@ -17,7 +17,7 @@
                 <i class='iconfont icon-shizhong'/>
                 发布于 {{ item.publishTime }}
               </div>
-              <router-link :to="{path:'/article/' + item.id}" class="post-title">
+              <router-link :to="{path:'/article/' + item.id}" class="post-title" :title="item.title">
                 <h3>{{ item.title }}</h3>
               </router-link>
               <div class='post-meta'>
