@@ -8,9 +8,8 @@
 - yarn dev 启动本地开发模式
 - yarn build 打包项目
 
-## 服务器端部署
 
 
-## 后端接口地址
-接口地址： [地址](https://sayyiku.github.io/SakuraVueInterface/#/)
+
+
 
